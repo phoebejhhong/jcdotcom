@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Jaryd Carolin's journey</title>
+  </head>
+  <body>
+      <main>
+        <h1></h1>
+        <h2>- 小狗狗失踪了 -</h2>
+
+        <section id="information">
+          <img style="width:100%;" src="assets/1.jpg" alt="Jaryd Carolin" id="theDogFace"/>
+          <h1 id="theDogFaceTitle">When Jaryd was firstly adopted...</h1>
+
+          <button id="noLinterHaHa">..and next</button>
+        </section>
+      </main>
+      <footer>
+        <p>Made with love 🐶</p>
+      </footer>
+      <script type="text/javascript">
+        function ready(fn) {
+          if (document.readyState != 'loading'){
+            fn();
+          } else {
+            document.addEventListener('DOMContentLoaded', fn);
+          }
+        }
+
+        var currentTitle = 0;
+        var titles = [
+          "Jaryd Carolin is being missed",
+          "Jaryd Carolin is missing",
+          "Xiǎo gǒu gǒu is being missed",
+          "Xiǎo gǒu gǒu is missing"
+        ];
+
+        function init() {
+
+          var current = 0;
+          var steps = [
+            {img: "assets/1.jpg", title: 'When Jaryd was firstly adopted...'},
+            {img: "assets/2.jpg", title: 'His owner, Ben was very happy, such a manly little boy'},
+            {img: "assets/3.jpg", title: 'So Ben bought his puppy a hat :)'},
+            {img: "assets/4.jpg", title: 'And then.. things went wildly wrong..'},
+            {img: "assets/5.jpg", title: 'when he lost his hat'},
+            {img: "assets/6.jpg", title: 'he start finding his true self...'},
+            {img: "assets/7.jpg", title: 'which made his owner very unhappy...,'},
+            {img: "assets/8.jpg", title: 'but he did not care... he had found himself...'},
+            {img: "assets/jaryd.png", title: 'finally, his owner gave up, decided to wish him luck in his future journey. No need to look for this beautiful missing dog...'},
+          ]
+
+          var currentStep = steps[current];
+
+          var noLinterButton = document.getElementById("noLinterHaHa");
+
+          var img = document.getElementById("theDogFace");
+          var title = document.getElementById("theDogFaceTitle");
+
+          noLinterButton.addEventListener("click", function() {
+            current++;
+            currentStep = steps[current % steps.length];
+            img.src = currentStep.img;
+            title.innerText = currentStep.title;
+            if (current === 8) {
+              noLinterButton.style.display = 'none';
+            }
+          });
+
+          setInterval(function() {
+            currentTitle = (currentTitle + Math.floor(Math.random(titles.length-1)) + 1) % titles.length;
+            window.document.title = (titles[currentTitle]);
+          }, 1000);
+        }
+
+        ready(init);
+      </script>
+    </div>
+  </body>
+</html>
