@@ -28,15 +28,16 @@ h1 {
   color: #ffffff;
 }
 
-button {
+button, #hahaCLickMe {
   width: 100%;
   font-size: 2em;
   color: pink;
   background-color: white;
   border-radius: 1rem;
   border: 1px solid pink;
+  text-decoration: none;
 }
-button:hover {
+button:hover, #hahaCLickMe:hover {
   cursor: pointer;
   color: blue;
   border: 1px solid blue;
