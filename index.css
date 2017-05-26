@@ -27,3 +27,17 @@ h1 {
   background: #468966;
   color: #ffffff;
 }
+
+button {
+  width: 100%;
+  font-size: 2em;
+  color: pink;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid pink;
+}
+button:hover {
+  cursor: pointer;
+  color: blue;
+  border: 1px solid blue;
+}
