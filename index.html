@@ -36,18 +36,45 @@
           </div>
           <div class="item">
             <span>Desexed</span>
-            <span>No</span>
+            <span>Yes</span>
           </div>
           <div class="item">
             <span>Words that he responds to</span>
             <span>lodash</span>
             <span>J-dog</span>
+            <span>Xiǎo gǒu gǒu</span>
           </div>
         </div>
       </main>
       <footer>
         <p>Made with love 🐶</p>
       </footer>
+      <script type="text/javascript">
+        function ready(fn) {
+          if (document.readyState != 'loading'){
+            fn();
+          } else {
+            document.addEventListener('DOMContentLoaded', fn);
+          }
+        }
+
+        var currentTitle = 0;
+        var titles = [
+          "Jaryd Carolin is being missed",
+          "Jaryd Carolin is missing",
+          "Xiǎo gǒu gǒu is being missed",
+          "Xiǎo gǒu gǒu is missing"
+        ];
+
+        function init() {
+          setInterval(function() {
+            currentTitle = (currentTitle + Math.floor(Math.random(titles.length-1)) + 1) % titles.length;
+            window.document.title = (titles[currentTitle]);
+          }, 1000);
+        }
+
+        ready(init);
+      </script>
     </div>
   </body>
 </html>
